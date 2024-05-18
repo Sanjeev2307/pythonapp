@@ -20,7 +20,10 @@ def main_view(request):
         # Assuming YourModel has fields name, date, and cars
         model_instance = user(name=name_input, date=date_input, cars=cars_input)
         model_instance.save()  # Save the model instance to the database
-    return render(request,'index.html')
+        users = user.objects.all()
+    #return render(request,'index.html')
+    return render(request, 'index.html', {'users': users})
+
 
 def password_manager(request):
     Username_input=request.GET.get('Username')# Get user name from front end from input

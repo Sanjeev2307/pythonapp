@@ -13,5 +13,22 @@
             </select>
             <button type="submit">Submit</button>
         </form>
+        
+
+    <h2>Submitted Users</h2>
+    <table border="1">
+        <tr>
+            <th>Name</th>
+            <th>Date</th>
+            <th>Cars</th>
+        </tr>
+        {% for user in users %}
+        <tr>
+            <td>{{ user.name }}</td>
+            <td>{{ user.date }}</td>
+            <td>{{ user.cars }}</td>
+        </tr>
+        {% endfor %}
+    </table>
     </Body>
 </html>
